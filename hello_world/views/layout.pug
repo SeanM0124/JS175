@@ -1,0 +1,23 @@
+doctype html
+
+html(lang=language)
+  head
+    block page_title
+
+  body
+    nav
+      ul
+        each country in countries
+          li
+            a(href=country.path
+              class=currentPathClass(country.path, currentPath)
+              )
+                img.flag(src=`/images/${country.flag}`
+                         alt=country.alt
+                         title=country.title)
+
+    header
+      block greeting
+
+    main
+      block software_engineer
